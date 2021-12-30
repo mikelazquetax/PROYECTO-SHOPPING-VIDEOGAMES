@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src ='./shopvideo.js'></script>
+    <title>VideoGames Store</title>
+</head>
+<body>
+<div id= 'botonera' class="botonera">
+    <select class="selector" name="select" id="selectorPlatform">
+        <option value="4">PC</option>
+        <option value="1" >Xbox One</option>
+        <option value="18">Play Station 4</option>
+        <option value="7" selected>Nintendo Switch</option>
+        
+
+    </select>
+    <select class="selector" name="select" id="selectorYear">
+        <option value="value1">2017</option>
+        <option value="value2" >2018</option>
+        <option value="value3">2019</option>
+        <option value="value3">2020</option>
+        <option value="value3" selected>2021</option>
+    </select>
+</div>
+<div id = 'mainContainer' class="mainContainer">
+    <div id='ratings' class="ratings"><h2>GLOBAL DETAILS</h2></div>
+    <div id='cuerpo' class="cuerpo">
+      <div id='carousel'>
+
+        <ul class='slider'>
+            <li id='cover'>
+                <img id="Imgc" src="./default.png" >
+            </li>
+            <li id= 'imagen1' >
+                <img id="Img2" src="./default.png" >
+            </li>
+            <li id="imagen2" >
+                <img id="Img3" src="./default.png">
+            </li>
+            <li id="imagen3" >
+                <img id="Img4" src="./default.png" >
+            </li>
+        </ul>
+        <ul class="menu">
+            <li>
+                <a href="#cover"><img src="./XBTON.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#imagen1"><img src="./OBTON.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#imagen2"><img src="./SQBTON.png" alt=""></a>
+            </li>
+            <li>
+                <a href="#imagen3"><img src="./triBTON.png" alt=""></a>
+            </li>
+        </ul>
+      </div>  
+    </div>
+    <div id='shop' class="shop">
+    
+        <h2>ADD TO CART</h2>
+        <div id='price' class="price"><p>Price: </p><p id='priceEur' class="priceEur">0</p> </div>
+        <div id='btnUnit' class='btnUnit'>
+            <button id='less'>-</button>
+            <button id='more'>+</button>
+        </div>
+        <div id='units' class="units">
+            <h5 id="nUnits">0</h5><h5>Units</h5>
+        </div>
+        <div class='finalPrice'>
+            <h5>Total Price: </h5>
+            <h5 id='fPrice'>0</h5> <h5>Euros</h5>
+        </div>
+        <div class="btonPrices">
+            <button>proceed to checkout</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
