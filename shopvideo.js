@@ -188,12 +188,17 @@ modalWithRatings = () => {
   ratings = [];
   ratings = [...videogameForRating[0].ratings];
   class VideogameRating {
+    #isMustBuy;
+    #numberOfReviews;
     constructor() {
+      
       this.name = videogameForRating[0].name;
       this.exceptional = ratings[0].percent;
       this.recommended = ratings[1].percent;
       this.meh = ratings[2].percent;
       this.skip = ratings[3].percent;
+      this.#isMustBuy = 'Yes/No';
+      this.#numberOfReviews = 0;
     }
     getFullEvaluation = () => {
       var pModal = document.createElement('p')
@@ -205,10 +210,12 @@ modalWithRatings = () => {
         
 
      var headerModal = document.createElement('div')
+     headerModal.id ='headerModal'
       headerModal.classList.add('modal-header')
       modalForRatings.appendChild(headerModal)
    
     var  titleModal = document.createElement("h3");
+    titleModal.id ='header'
       titleModal.classList.add("title");
       titleModal.innerText = this.name
       headerModal.appendChild(titleModal)
@@ -256,14 +263,60 @@ modalWithRatings = () => {
       modalForRatings.id = 'mRatings'
       let bodyDoc = document.querySelector("body");
       bodyDoc.appendChild(modalForRatings)
+      
     };
-  }
 
+    get isMustBuyValue(){
+  return  this.exceptional 
+
+    }
+
+    set isMustBuyValue(exceptionalValuation){
+      var isAMust = document.createElement('p')
+      
+      var modalForRatings = document.getElementById('mRatings')
+      modalForRatings.appendChild(isAMust)
+      if(exceptionalValuation > 50){
+        this.#isMustBuy = 'Is it a Must Buy? : Yes'
+        isAMust.innerText =  this.#isMustBuy
+      }else{
+        this.#isMustBuy = 'Is it a Must Buy? : No'
+        isAMust.innerText = this.#isMustBuy 
+      }
+    }
+
+    get numberOfReviews(){
+      let totalReviews = ratings.reduce((ini,review)=>{
+        return ini + review.count
+      },0)
+      return totalReviews
+    }
+
+    set numberOfReviews(totalRevs){
+      this.#numberOfReviews = totalRevs
+      var pTotalRevs = document.createElement('p')
+      pTotalRevs.innerText = `${this.#numberOfReviews}  Reviews `
+      var headerModal = document.getElementById('header')
+      header.appendChild(pTotalRevs)
+    }
+  }
+ 
   const videoRating = new VideogameRating(
+   
     ratings[0].percent,
     ratings[1].percent,
     ratings[2].percent,
     ratings[3].percent
+
   );
-  videoRating.getFullEvaluation();
+
+ videoRating.getFullEvaluation();
+  console.log(videoRating.isMustBuyValue)
+  console.log(videoRating.numberOfReviews)
+
+  var totalRevs = videoRating.numberOfReviews
+  videoRating.numberOfReviews = totalRevs
+  var exceptionalValuation = videoRating.isMustBuyValue
+  videoRating.isMustBuyValue = exceptionalValuation
+
 };

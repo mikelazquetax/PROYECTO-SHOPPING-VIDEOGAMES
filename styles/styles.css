@@ -110,6 +110,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
   top: 20%;
   left: 5%;
   -webkit-transform: -50%, -50% scale(1);
