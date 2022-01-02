@@ -45,12 +45,12 @@ body{
 
     @include ipad{
         width: 500px;
-        height: 150px;
+        height: 250px;
         font-size: 25px;
     }
     @include mobile{
         width: 300px;
-        height: 150px;
+        height: 250px;
         font-size: 20px;
     }
     h2 {

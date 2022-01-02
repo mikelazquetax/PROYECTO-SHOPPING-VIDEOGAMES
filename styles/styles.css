@@ -100,6 +100,103 @@
           transform: scale(1.2);
 }
 
+.modalRating {
+  /*       display: flex;
+      flex-direction: row; */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  -webkit-transform: -50%, -50% scale(1);
+          transform: -50%, -50% scale(1);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  border: 4px solid white;
+  z-index: 10;
+  background-color: whitesmoke;
+  width: 700px;
+  max-width: 80%;
+  height: 400px;
+  color: black;
+  font-weight: bold;
+}
+
+.modalRating p {
+  text-align: center;
+}
+
+.modalRating .pie {
+  margin-top: 10%;
+  margin-left: 7%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100px;
+  height: 50px;
+  color: black;
+  position: relative;
+  font-size: 15px;
+  /*  display: flex; */
+  /*  margin: 10px; */
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  --percentage: 0;
+  --fill: #00f;
+}
+
+.modalRating .pie:after {
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  border: 10px solid;
+  border-color: #000 #000 var(--fill) var(--fill);
+  border-radius: 50%;
+  -webkit-transform: rotate(calc(1deg *(-45 + var(--percentage) * 1.8 )));
+          transform: rotate(calc(1deg *(-45 + var(--percentage) * 1.8 )));
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .closeB {
+  border-radius: 50%;
+  font-weight: bold;
+}
+
 body {
   background: url("../background.png") no-repeat center/cover;
   color: white;
@@ -167,7 +264,7 @@ body:before {
 @media (max-width: 770px) {
   .mainContainer .ratings {
     width: 500px;
-    height: 150px;
+    height: 250px;
     font-size: 25px;
   }
 }
@@ -175,7 +272,7 @@ body:before {
 @media (max-width: 390px) {
   .mainContainer .ratings {
     width: 300px;
-    height: 150px;
+    height: 250px;
     font-size: 20px;
   }
 }
