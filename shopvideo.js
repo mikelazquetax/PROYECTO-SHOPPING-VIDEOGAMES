@@ -1,7 +1,8 @@
 let allVideogames = [];
 let contador = 0;
-
+var date = new Date();
 window.onload = () => {
+ 
   let bodyDoc = document.querySelector("body");
   let botonera = document.getElementById("botonera");
   let botonBusqueda = document.createElement("button");
@@ -184,9 +185,36 @@ modalWithRatings = () => {
     return item.name == selectedTitle;
   });
   console.log(videogameForRating);
-
+  fechaRelease = videogameForRating[0].released
   ratings = [];
   ratings = [...videogameForRating[0].ratings];
+/*   class calculoFecha{
+    constructor(){}
+      static calcularDiasRelease(fechaRelease){
+
+        function formatDate(date) {
+          var d = new Date(date),
+              month = '' + (d.getMonth() + 1),
+              day = '' + d.getDate(),
+              year = d.getFullYear();
+      
+          if (month.length < 2) 
+              month = '0' + month;
+          if (day.length < 2) 
+              day = '0' + day;
+      
+          return [year, month, day].join('-');
+      }
+     let fechaF = formatDate(date)
+        const today = new Date();
+        let rel = fechaF.getTime() - fechaRelease.getTime()
+        return rel
+      }
+
+    
+  }
+  
+  let rel = calculoFecha.calcularDiasRelease(fechaRelease) */
   class VideogameRating {
     #isMustBuy;
     #numberOfReviews;
